@@ -12,7 +12,7 @@ var guessedText = document.getElementById("guessed");
 
 var computerGuesses = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u",
     "v", "w", "x", "y", "z",] 
-var used = [];
+var used = []
 
 
 var computerGuess = computerGuesses[Math.floor(Math.random() * computerGuesses.length)];
@@ -20,8 +20,10 @@ var computerGuess = computerGuesses[Math.floor(Math.random() * computerGuesses.l
 
 document.onkeyup = function (event) {
      var userGuess = event.key;
-    used.push(userGuess);
-    if (guessLeft != 1) {
+     used.push(userGuess);
+    if (computerGuesses.indexOf(userGuess) >= 0) {
+        // if used.push(userGuess);
+        if (guessLeft != 1) {
         guessLeft -= 1;
         guessLeftText.textContent = ("Guess Left:" + guessLeft);
         guessedText.textContent = ("Guessed Letters:" + used);
@@ -56,6 +58,7 @@ document.onkeyup = function (event) {
 
 
 
+        }
         }
 
 
